@@ -24,7 +24,7 @@
   --header-h: 100px;
   --header-h-mobile: 64px;
   --radius: 14px;
-  --max: 1200px;
+  --max: 100vw;
   --pad: clamp(18px, 4vw, 56px);
 }
 
