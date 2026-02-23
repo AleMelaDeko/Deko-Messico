@@ -1,0 +1,133 @@
+/* Stile per l'header del sito - Tema Messico */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 3px solid var(--verde-mex);
+  box-shadow: 0 2px 20px rgba(206, 17, 38, 0.3);
+  display: flex;
+  align-items: center;
+  background-image: 
+    repeating-linear-gradient(45deg, 
+      rgba(0, 99, 65, 0.05) 0px, 
+      rgba(0, 99, 65, 0.05) 20px,
+      rgba(255, 255, 255, 0.02) 20px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(206, 17, 38, 0.05) 40px,
+      rgba(206, 17, 38, 0.05) 60px);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  left: -20px;
+  opacity: 0.7;
+  animation: swing 3s infinite ease-in-out;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--bianco);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--verde-mex), var(--bianco), var(--rosso-mex));
+  transition: width 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--bianco);
+  text-shadow: 0 0 8px var(--rosso-mex);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+body {
+  padding-top: 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
+  
+  .logo::before {
+    width: 30px;
+    height: 30px;
+    left: -15px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .main-nav .nav-list {
+    gap: 20px;
+  }
+  
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 5px 5px;
+  }
+}

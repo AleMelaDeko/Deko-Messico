@@ -1,0 +1,119 @@
+<!---- Pagina Home contenente Header, Hero Section, Sezione Catalogo, News, Footer ---->
+<!DOCTYPE html>
+<html lang="spa">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKO - Hogar</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+  <!---- HEADER ---->
+  <!-- Creo un container per il logo e il menu -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="/" class="logo" aria-label="Homepage">
+        <img src="images/logo Messico Bianco-png.png" alt="Logotipo DEKO"/>
+      </a>
+      <!-- Menu -->
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Hogar</a></li>
+          <li><a href="/contactos/" class="nav-link">Contactos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!---- HERO SECTION ---->
+  <!-- Creo un container -->
+  <section class="mex-hero">
+    <!-- Creo una griglia di immagini per il background -->
+    <div class="hero-background-grid">
+      <div class="hero-bg-image" style="background-image: url('images/img/IMG_1003\ copia.jpg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img/IMG_1026.jpg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img/laboratorio\ \(2\).jpeg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img/IMG_1153.jpg'); background-size: cover;"></div>
+      </div>
+    </div>
+    <!-- Creo il contenuto della sezione con il testo -->
+    <div class="mex-hero__content">
+      <p class="mex-hero__kicker">DEKO Antiadherentes América S de RL de CV</p>
+      <h1 class="mex-hero__title">
+        <span class="mex-hero__title-main">INNOVACIÓN</span>
+        <span class="mex-hero__title-accent">EN LOS TEJADOS</span>
+      </h1>
+      <p class="mex-hero__subtitle">Soluciones antiadherentes para utensilios de cocina y uso industrial.</p>
+      <a href="/contactos/" class="mex-hero__btn">CONTÁCTENOS</a> <!-- Bottone che reindirizza alla pagina dei contatti -->
+    </div>
+  </section>
+
+  <!---- SEZIONE CATALOGO, NEWS, SITO ---->
+  <section class="showcase-grid">
+    <div class="container">
+      <h2 class="section-title">NOTICIAS Y EVENTOS</h2>
+      <!-- Griglia con 3 colonne-->
+      <div class="grid-3-cols">
+        <!-- Item 1: Catalogo Deko 2026 -->
+        <div class="grid-item catalog-item">
+          <div class="item-media">
+            <img src="images/catalogo-cover.png" alt="Catálogo Deko 2026">
+            <span class="item-badge">CATALOGAR</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>Catálogo 2026</h3>
+            <p>Descubre todas las novedades de la nueva colección.</p>
+            <a href="documents/Cat-26.pdf" target="_blank" class="item-link">Descargar PDF →</a> <!-- Link al PDF del catalogo -->
+          </div>
+        </div>
+          
+        <!-- Item 2: News Deko Kustom -->
+        <div class="grid-item news-item">
+          <div class="item-media">
+            <img src="images/dekokustom.png" alt="Deko Kustom">
+            <span class="item-badge">NOTICIAS</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>DEKO KUSTOM</h3>
+            <p>Personalización adaptada a tus proyectos.</p>
+            <a href="https://www.dekokustom.com/" target="_blank" class="item-link">Más información →</a> <!-- Link al sito di Deko Kustom -->
+          </div>
+        </div>
+          
+        <!-- Item 3: Sito Internet Deko IT -->
+        <div class="grid-item event-item">
+          <div class="item-media">
+            <img src="images/azienda.png" alt="Agencia">
+            <span class="item-badge">EMPRESA ITALIANA</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>Deko Srl - Italia</h3>
+            <p>Experiencia, calidad e innovación en recubrimientos.</p>
+            <a href="https://www.dekosrl.com/en/" target="_blank" class="item-link">Visita el sitio web →</a> <!-- Link al sito di Deko Srl Italia -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!---- FOOTER ---->
+<!-- Footer con informazioni legali e link a altre informazioni -->
+  <footer class="site-footer">
+    <div class="legal">
+      <div class="legal-text">
+        <p>© 2026 -DEKO Antiadherentes América S de RL de CV</p>
+      </div>
+      <ul class="legal-links">
+        <li><a href="/política-de-privacidad/">Política de Privacidad</a></li>
+        <li><a href="/política-de-cookies/">Política de Cookies</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

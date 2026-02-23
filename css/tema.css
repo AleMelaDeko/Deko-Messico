@@ -1,0 +1,129 @@
+/* Pagina CSS per il tema generale del sito. Contiene variabili per i colori, stili di base, classi per bottoni e utility, e animazioni. */
+
+/* ---- FONT ---- */
+@font-face {
+  font-family: 'din-2014';
+  src: url('font/din-2014.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --bg: #1a1a1a;
+  --text: #f5f5f5;
+  --muted: #cfcfcf;
+  --line: rgba(241, 241, 241, 0.14);
+  
+  --verde-mex: #006341;
+  --bianco: #FFFFFF;
+  --rosso-mex: #CE1126;
+  
+  --accent: var(--verde-mex);
+  --accent-2: #008c5a;
+  
+  --header-h: 100px;
+  --header-h-mobile: 64px;
+  --radius: 14px;
+  --max: 1200px;
+  --pad: clamp(18px, 4vw, 56px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'din-2014', sans-serif;
+}
+
+/* Pattern messicano */
+.mexican-pattern {
+  background-image: 
+    linear-gradient(45deg, var(--verde-mex) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--bianco) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--rosso-mex) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--verde-mex) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Utility classi */
+.text-verde { color: var(--verde-mex); }
+.text-bianco { color: var(--bianco); }
+.text-rosso { color: var(--rosso-mex); }
+
+.bg-verde { background: var(--verde-mex); }
+.bg-bianco { background: var(--bianco); }
+.bg-rosso { background: var(--rosso-mex); }
+
+.border-verde { border-color: var(--verde-mex); }
+.border-bianco { border-color: var(--bianco); }
+.border-rosso { border-color: var(--rosso-mex); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-overlay-mex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(0, 99, 65, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(206, 17, 38, 0.3) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Bottoni */
+.btn-mex {
+  background: var(--verde-mex);
+  color: var(--bianco);
+  border: 2px solid var(--bianco);
+  padding: 12px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-mex:hover {
+  background: var(--rosso-mex);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(206, 17, 38, 0.4);
+}
+
+/* Animazioni */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}

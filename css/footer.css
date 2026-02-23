@@ -1,0 +1,167 @@
+/* Stili per il footer - Tema Messico */
+
+.site-footer {
+  background: #0a0a0a;
+  padding: 40px 40px;
+  border-top: 3px solid var(--verde-mex);
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(45deg, 
+      rgba(0, 99, 65, 0.05) 0px, 
+      rgba(0, 99, 65, 0.05) 20px,
+      rgba(255, 255, 255, 0.02) 20px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(206, 17, 38, 0.05) 40px,
+      rgba(206, 17, 38, 0.05) 60px);
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  background: transparent;
+  border-top: none;
+  position: relative;
+  z-index: 2;
+}
+
+.legal-text {
+  position: relative;
+  padding-left: 5px;
+}
+
+.legal-text::before {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.legal-text p {
+  color: #cfcfcf;
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+.legal-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legal-links li {
+  position: relative;
+}
+
+.legal-links li:not(:last-child)::after {
+  content: '•';
+  position: absolute;
+  right: -22px;
+  color: var(--bianco);
+  opacity: 0.5;
+  font-size: 18px;
+}
+
+.legal-links a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  letter-spacing: 0.5px;
+}
+
+.legal-links a:hover {
+  color: var(--bianco);
+  border-bottom-color: var(--rosso-mex);
+  text-shadow: 0 0 8px var(--rosso-mex);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 30px 16px;
+    margin-top: 40px;
+  }
+  
+  .legal {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .legal-text {
+    padding-left: 0;
+  }
+
+  .legal-text p {
+    font-size: 12px;
+  }
+  
+  .legal-text::before {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .legal-links li:not(:last-child)::after {
+    display: none;
+  }
+  
+  .legal-links a {
+    font-size: 13px;
+  }
+}
+
+/* Animazione per il footer */
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: var(--verde-mex);
+  }
+  50% {
+    border-color: var(--rosso-mex);
+  }
+}
+
+.site-footer {
+  animation: borderPulse 3s infinite;
+}
