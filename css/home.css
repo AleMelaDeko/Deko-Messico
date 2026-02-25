@@ -29,7 +29,10 @@
 /* Contenitore per il testo */
 .mex-hero__content {
   background: #F8F4E9;
-  padding: 30px 30px;
+  padding-top: 208px;
+  padding-bottom: 210px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: relative;
   z-index: 20;
   max-width: 800px;
@@ -153,7 +156,7 @@
 /* =========================================== */
 .showcase-grid {
   padding: 100px 60px 120px;
-  background: #F8F4E9;
+  background: var(--bg);
   position: relative;
 }
 
@@ -184,7 +187,7 @@
 .section-title {
   font-size: 40px;
   font-weight: 600;
-  color: #2d2d2d;
+  color: var(--sabbia);
   margin: 0;
   line-height: 1.1;
   position: relative;
@@ -543,6 +546,10 @@
     padding: 14px 40px;
     font-size: 15px;
   }
+
+  .section-title {
+    font-size: 33.3px;
+  }
 }
 
 /* Tablet portrait */
@@ -639,6 +646,10 @@
     padding: 14px 35px;
     font-size: 15px;
   }
+
+  .section-title {
+    font-size: 24.3px;
+  }
 }
 
 /* Mobile */
@@ -703,6 +714,151 @@
   .hero-bg-image:hover {
     transform: scale(1.02);
   }
+
+  /* Grid item con immagine sopra e testo sotto */
+  .grid-item {
+    display: flex;
+    flex-direction: column;  /* Impila verticalmente */
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    margin: 0;
+  }
+
+  .item-media {
+    width: 100%;           /* Larghezza piena */
+    height: 180px;         /* Altezza fissa per l'immagine */
+    flex-shrink: 0;
+    order: 1;              /* Immagine per prima (sopra) */
+  }
+
+  .item-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .item-content {
+    width: 100%;           /* Larghezza piena */
+    height: auto;
+    min-height: 160px;
+    padding: 15px 15px;
+    order: 2;              /* Testo per secondo (sotto) */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  /* Badge rimane posizionato sull'immagine */
+  .item-badge {
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    border-left-width: 2px;
+    z-index: 10;
+  }
+
+  /* Testi */
+  .item-content h3 {
+    font-size: 18px;
+    max-height: none;
+    margin-bottom: 8px;
+    order: 1;
+  }
+
+  .item-content p {
+    max-height: none;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    order: 2;
+  }
+
+  .item-link {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    gap: 5px;
+    order: 3;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .item-link::after {
+    font-size: 10px;
+  }
+
+  /* Card centrale - stessa struttura */
+  .grid-row-1 .grid-item {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .grid-row-1 .item-media {
+    width: 100%;
+    height: 200px;
+    order: 1;
+  }
+
+  .grid-row-1 .item-content {
+    width: 100%;
+    height: auto;
+    padding: 15px 18px;
+    order: 2;
+  }
+
+  .grid-row-1 .item-content h3 {
+    font-size: 20px;
+    max-height: none;
+    margin-bottom: 10px;
+  }
+
+  .grid-row-1 .item-content p {
+    font-size: 13px;
+    max-height: none;
+    margin-bottom: 12px;
+  }
+
+  /* Bordi più sottili */
+  .catalog-item,
+  .news-item,
+  .event-item {
+    border-width: 2px;
+  }
+
+  /* Disabilitiamo hover effects */
+  .grid-item:hover {
+    transform: none;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+  }
+
+  .grid-item:hover .item-media img {
+    transform: none;
+  }
+
+  .item-link:hover {
+    gap: 5px;
+  }
+
+  .section-title {
+    font-size: 25px;     
+    font-weight: 600;
+    white-space: nowrap;  /* Forza il testo su una sola riga */
+    overflow: hidden;     /* Nasconde eventuale overflow */
+    text-overflow: ellipsis; /* Aggiunge ... se necessario */
+    max-width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .section-title::after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
+  }
 }
 
 /* Mobile molto piccolo */
@@ -719,7 +875,8 @@
     width: calc(100% - 20px);
     height: 90px;
     gap: 4px;
-    margin-bottom: 30px;
+    margin-bottom: 2px;
+    margin-top: 60px;
   }
 
   .hero-bg-image {
@@ -740,6 +897,83 @@
 
   .hero-bg-image:hover {
     transform: none; /* Disabilitiamo hover su schermi molto piccoli per performance */
+  }
+
+  .item-media {
+    height: 150px;  /* Altezza ridotta */
+  }
+
+  .item-content {
+    padding: 12px 12px;
+    min-height: 140px;
+  }
+
+  .item-content h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .item-content p {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .item-badge {
+    padding: 3px 8px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    border-left-width: 1px;
+  }
+
+  .item-link {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .item-link::after {
+    font-size: 9px;
+  }
+
+  /* Card centrale */
+  .grid-row-1 .item-media {
+    height: 170px;
+  }
+
+  .grid-row-1 .item-content {
+    padding: 12px 15px;
+  }
+
+  .grid-row-1 .item-content h3 {
+    font-size: 18px;
+  }
+
+  .grid-row-1 .item-content p {
+    font-size: 12px;
+  }
+
+  /* Bordi ancora più sottili */
+  .catalog-item,
+  .news-item,
+  .event-item {
+    border-width: 1px;
+  }
+
+  .section-title {
+    font-size: 20px;      /* Ridotto per stare su una riga */
+    font-weight: 600;
+    white-space: nowrap;  /* Forza il testo su una sola riga */
+    overflow: hidden;     /* Nasconde eventuale overflow */
+    text-overflow: ellipsis; /* Aggiunge ... se necessario */
+    max-width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .section-title::after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
   }
 }
 
