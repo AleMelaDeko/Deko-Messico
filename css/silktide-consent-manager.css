@@ -1,26 +1,24 @@
 /* 
   Silktide Consent Manager - https://silktide.com/consent-manager/  
-
   Styles are at risked of being overridden by styles coming from the site the consent manager is used on.
   To help prevent this, global wrapper elements are prefixed with "#silktide-"
 */
 
 /* --------------------------------
-  Global Styles - These elements exist in the main DOM and styling is limited to positioning and animation
+  Global Styles
 -------------------------------- */
-/* Wrapper (Global) */
 #silktide-wrapper {
-              --focus: 0 0 0 2px #ffffff, 0 0 0 4px #000000, 0 0 0 6px #ffffff;
-              --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-              --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-              --primaryColor: var(--rosso-mex);
-              --backgroundColor: #050505;
-              --textColor: #f4f0df;
-              --backdropBackgroundColor: #00000033;
-              --backdropBackgroundBlur: 0px;
-              --cookieIconColor: #050505;
-              --cookieIconBackgroundColor: var(--primaryColor);
-              position: fixed;
+  --focus: 0 0 0 2px #ffffff, 0 0 0 4px #000000, 0 0 0 6px #ffffff;
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: var(--rosso-mex);
+  --backgroundColor: #050505;
+  --textColor: #f4f0df;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --cookieIconColor: #050505;
+  --cookieIconBackgroundColor: var(--primaryColor);
+  position: fixed;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -30,10 +28,10 @@
   border: 0px;
   display: flex;
   justify-content: center;
-  align-items: center
-            }
+  align-items: center;
+}
 
-/* Backdrop (Global) */
+/* Backdrop */
 #silktide-backdrop-global {
   position: fixed;
   top: 0;
@@ -77,9 +75,8 @@
 }
 
 /* --------------------------------
-  General Styles
+  Button Styles
 -------------------------------- */
-
 #silktide-wrapper .st-button {
   color: var(--backgroundColor);
   background-color: var(--primaryColor);
@@ -93,7 +90,6 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
 
 #silktide-wrapper .st-button--primary:hover {
   background-color: var(--backgroundColor);
@@ -134,10 +130,6 @@
   animation: silktide-slideInDown 350ms ease-out forwards;
   animation-delay: 0.3s;
   box-shadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-}
-
-#silktide-banner:focus {
-  border-radius: 50%;
 }
 
 #silktide-banner.center {
@@ -197,27 +189,15 @@
   margin: 0px 0px 15px;
 }
 
-#silktide-banner a {
-  display: inline-block;
-  color: var(--primaryColor);
-  text-decoration: underline;
-  background-color: var(--backgroundColor);
-}
-
-#silktide-banner a:hover {
-  color: var(--textColor);
-}
-
 #silktide-banner a.silktide-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: var(--primaryColor); /* passed down to svg > path */
+  fill: var(--primaryColor);
   margin-left: auto;
   width: 48px;
   height: 48px;
 }
-
 
 #silktide-banner .actions {
   display: flex;
@@ -266,9 +246,7 @@
   box-sizing: border-box;
 }
 
-/* --------------------------------
-  Modal - Header
--------------------------------- */
+/* Modal Header */
 #silktide-modal header {
   display: flex;
   justify-content: space-between;
@@ -299,23 +277,20 @@
   fill: var(--primaryColor);
 }
 
-/* --------------------------------
-  Modal - Content
--------------------------------- */
-
+/* Modal Content */
 #silktide-modal section {
   flex: 1;
   margin-top: 32px;
 }
 
 #silktide-modal section::-webkit-scrollbar {
-  display: block; /* Force scrollbars to show */
-  width: 5px; /* Width of the scrollbar */
+  display: block;
+  width: 5px;
 }
 
 #silktide-modal section::-webkit-scrollbar-thumb {
-  background-color: var(--textColor); /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
+  background-color: var(--textColor);
+  border-radius: 10px;
 }
 
 #silktide-modal p {
@@ -354,9 +329,7 @@
   gap: 24px;  
 }
 
-/* --------------------------------
-  Modal - Switches
--------------------------------- */
+/* Modal Switches */
 #silktide-modal .switch {
   flex-shrink: 0;
   position: relative;
@@ -377,7 +350,6 @@
   position: absolute;
 }
 
-/* Unchecked Switch Styles */
 #silktide-modal .switch__pill {
   position: relative;
   display: block;
@@ -419,7 +391,6 @@
   opacity: 0;
 }
 
-/* Checked Switch Styles */
 #silktide-modal .switch input:checked + .switch__pill {
   background: var(--primaryColor);
 }
@@ -438,15 +409,12 @@
   opacity: 1;
 }
 
-/* Disabled Switch Styles */
 #silktide-modal .switch input:disabled + .switch__pill {
   opacity: 0.65;
   cursor: not-allowed;
 }
 
-/* --------------------------------
-  Modal - Footer
--------------------------------- */
+/* Modal Footer */
 #silktide-modal footer {
   display: flex;
   flex-direction: column;
@@ -477,7 +445,6 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  padding: 0px;
   border: none;
   background-color: var(--cookieIconColor);
   cursor: pointer;
@@ -495,9 +462,7 @@
   fill: var(--cookieIconBackgroundColor);
 }
 
-/* --------------------------------
-  Backdrop
--------------------------------- */
+/* Backdrop */
 #silktide-backdrop {
   display: none;
   position: absolute;
@@ -514,12 +479,8 @@
   Animations
 -------------------------------- */
 @keyframes silktide-fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes silktide-slideInDown {
@@ -565,3 +526,4 @@
     transform: translate(0px, 0px);
   }
 }
+

@@ -1,381 +1,647 @@
-/* Stili per la pagina Contatti - Tema Messico */
+/* STILE COMPLETO - MESSICO CONTEMPORANEO */
+
+.contact-page {
+  --verde-mex: #006341;
+  --rosso-mex: #CE1126;
+  --bianco: #FFFFFF;
+  --sabbia: #F8F4E9;
+  --grafite: #2C2C2C;
+}
 
 /* HERO SECTION */
-.page-hero__inner { 
+.contact-page .page-hero__inner {
   max-width: 100vw;
   margin: 0 auto;
-  padding: 180px 20px 80px;
+  padding: 40px 40px 40px;
   width: 100%;
-  text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
 
-.page-hero__inner::before {
-  font-size: 60px;
-  position: absolute;
-  top: 100px;
-  left: 10%;
-  opacity: 0.3;
-  animation: swing 4s infinite;
-}
-
-.page-hero__inner::after {
-  font-size: 60px;
-  position: absolute;
-  top: 120px;
-  right: 10%;
-  opacity: 0.3;
-  animation: swing 4s infinite reverse;
-}
-
-.hero-kicker { 
-  letter-spacing: 6px;
+.contact-page .hero-kicker {
+  letter-spacing: 4px;
   text-transform: uppercase;
-  font-size: 14px;
-  background: linear-gradient(90deg, var(--verde-mex), var(--bianco), var(--rosso-mex));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 0 20px;
-  font-weight: 600;
-}
-
-.hero-stacked {
-  margin: 0 0 20px;
-  font-size: clamp(48px, 8vw, 110px);
-  line-height: 1;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.accent {
-  color: var(--bianco);
-  display: inline-block;
-  text-shadow: 3px 3px 0 var(--verde-mex), 5px 5px 0 var(--rosso-mex);
-  position: relative;
-}
-
-.accent::before {
-  position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: var(--rosso-mex);
-  opacity: 0.7;
-}
-
-.accent::after {
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 13px;
   color: var(--verde-mex);
-  opacity: 0.7;
+  margin: 0 0 10px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 50px;
+  align-self: center;
 }
 
-.hero-sub {
-  margin: 30px auto 0;
-  color: #cfcfcf;
-  max-width: 600px;
+.contact-page .hero-kicker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 2px;
+  background: var(--rosso-mex);
+}
+
+.contact-page .hero-stacked {
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1;
+  font-weight: 800;
+  color: var(--grafite);
+  margin: 0;
+  text-align: center;
+  align-self: center;
+}
+
+.contact-page .hero-sub {
+  color: var(--grafite);
   font-size: 18px;
-  letter-spacing: 1px;
-  line-height: 1.8;
-  background: rgba(0,0,0,0.3);
-  padding: 15px 30px;
-  border-radius: 50px;
-  backdrop-filter: blur(5px);
-  border: 1px solid var(--bianco);
+  line-height: 1.6;
+  padding: 30px;
+  background: var(--sabbia);
+  border-left: 6px solid var(--verde-mex);
+  margin: 30px auto 0;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  align-self: center;
+}
+
+.contact-page .hero-sub::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-right: 3px solid var(--rosso-mex);
+  border-top: 3px solid var(--rosso-mex);
+  opacity: 0.3;
 }
 
 /* CONTACT SECTION */
-.section {
-  padding: 60px 20px 80px;
-  background: #1a1a1a;
+.contact-page .section {
+  padding: 80px 40px 80px;
+  background: var(--bianco);
   position: relative;
-  overflow: hidden;
 }
 
-.section::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, var(--verde-mex) 0%, transparent 70%);
-  opacity: 0.1;
-  border-radius: 50%;
+.contact-page .section-inner {
+  max-width: 100vw;
+  margin-left: 70px;
+  margin-right: 70px;
+  position: relative;
 }
 
-.section::after {
-  content: '';
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, var(--rosso-mex) 0%, transparent 70%);
-  opacity: 0.1;
-  border-radius: 50%;
-}
-
-.section-inner {
-  max-width: 1000px;
-  margin: 0 auto;
+/* Header */
+.contact-page .contact-header {
+  margin-bottom: 60px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  position: relative;
-  z-index: 2;
-}
-
-.contact-header {
+  align-items: center;
+  gap: 5px;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-.split-eyebrow {
-  color: var(--bianco);
+.contact-page .split-eyebrow {
+  color: var(--rosso-mex);
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-size: 13px;
-  margin: 0 0 20px;
-  font-weight: 500;
-  background: linear-gradient(90deg, var(--verde-mex), var(--bianco), var(--rosso-mex));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-.split-title {
-  font-size: clamp(28px, 4vw, 42px);
-  letter-spacing: 4px;
+.contact-page .split-title {
+  font-size: 36px;
+  letter-spacing: -1px;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--bianco);
+  color: var(--grafite);
   margin: 0;
-  text-shadow: 2px 2px 0 var(--verde-mex), 3px 3px 0 var(--rosso-mex);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.contact-page .split-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, var(--verde-mex) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
 }
 
 /* CONTACT CARDS */
-.contact-cards {
-  display: grid; /* Layout a griglia per le card di contatti */
-  grid-template-columns: repeat(3, 1fr); /* Tre colonne di uguale larghezza */
-  gap: 25px;
-  margin-top: 30px;
+.contact-page .contact-cards {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 30px;
+  align-items: stretch;
 }
 
-.contact-card {
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #222;
-  padding: 35px 25px;
-  transition: all 0.5s ease;
-  text-align: center;
+/* Card Indirizzo */
+.contact-page .contact-card:nth-child(1) {
+  grid-row: span 2;
+  background: linear-gradient(145deg, var(--verde-mex) 0%, #008555 100%);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 8px solid var(--sabbia);
+}
+
+/* Card Telefono */
+.contact-page .contact-card:nth-child(2) {
+  grid-column: 2 / -1;
+  background: var(--grafite);
+  padding: 50px 40px;
+  border-right: 10px solid var(--rosso-mex);
+}
+
+/* Card Email */
+.contact-page .contact-card:nth-child(3) {
+  grid-column: 2 / -1;
+  background: var(--sabbia);
+  padding: 50px 40px;
+  border-left: 10px solid var(--verde-mex);
+}
+
+/* Stili delle card */
+.contact-page .contact-card {
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
   position: relative;
   overflow: hidden;
+  margin: 0;
+  height: 100%;
 }
 
-.contact-card::before {
+.contact-page .contact-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
-  background: linear-gradient(135deg, 
-    rgba(0, 99, 65, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(206, 17, 38, 0.2) 100%);
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
   opacity: 0;
-  transition: opacity 0.5s;
-  z-index: 1;
+  transition: opacity 0.4s ease;
 }
 
-.contact-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  border-color: var(--bianco);
-  box-shadow: 0 30px 60px rgba(206, 17, 38, 0.3);
-  background: #2a2a2a;
+.contact-page .contact-card:nth-child(1):hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 30px 30px 50px -30px var(--verde-mex);
 }
 
-.contact-card:hover::before {
+.contact-page .contact-card:nth-child(2):hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 30px 30px 50px -30px var(--rosso-mex);
+}
+
+.contact-page .contact-card:nth-child(3):hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 30px 30px 50px -30px var(--verde-mex);
+}
+
+.contact-page .contact-card:hover::before {
   opacity: 1;
 }
 
-.contact-card h3 {
-  margin: 0 0 20px;
+/* Testi nelle card */
+.contact-page .contact-card h3 {
+  margin: 0 0 25px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--bianco);
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 14px;
   position: relative;
-  z-index: 2;
   display: inline-block;
 }
 
-.contact-card h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: var(--rosso-mex);
-  transition: width 0.3s ease;
-}
-
-.contact-card:hover h3::after {
-  width: 80px;
-  background: linear-gradient(90deg, var(--verde-mex), var(--rosso-mex));
-}
-
-.contact-card p {
-  margin: 0 0 10px;
-  color: #cfcfcf;
-  line-height: 1.8;
-  font-size: 15px;
-  position: relative;
-  z-index: 2;
-}
-
-.contact-card a {
+.contact-page .contact-card:nth-child(1) h3 {
   color: var(--bianco);
-  text-decoration: none;
-  transition: all 0.3s;
-  font-weight: 500;
-  border-bottom: 1px dotted transparent;
+  border-bottom: 2px solid var(--sabbia);
+  padding-bottom: 10px;
 }
 
-.contact-card a:hover {
+.contact-page .contact-card:nth-child(2) h3 {
+  color: var(--bianco);
+  border-bottom: 2px solid var(--rosso-mex);
+  padding-bottom: 10px;
+}
+
+.contact-page .contact-card:nth-child(3) h3 {
+  color: var(--grafite);
+  border-bottom: 2px solid var(--verde-mex);
+  padding-bottom: 10px;
+}
+
+.contact-page .contact-card p {
+  margin: 0 0 15px;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.contact-page .contact-card:nth-child(1) p {
+  color: var(--bianco);
+  opacity: 0.9;
+  font-size: 18px;
+}
+
+.contact-page .contact-card:nth-child(2) p,
+.contact-page .contact-card:nth-child(2) a {
+  color: var(--bianco);
+}
+
+.contact-page .contact-card:nth-child(3) p,
+.contact-page .contact-card:nth-child(3) a {
+  color: var(--grafite);
+}
+
+.contact-page .contact-card a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-page .contact-card:nth-child(2) a:hover {
   color: var(--rosso-mex);
   border-bottom-color: var(--rosso-mex);
 }
 
-.contact-card--phone .hours {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 15px;
-  border-radius: 12px;
-  margin-top: 15px;
-  border: 1px solid rgba(255, 223, 0, 0.1);
+.contact-page .contact-card:nth-child(3) a:hover {
+  color: var(--verde-mex);
+  border-bottom-color: var(--verde-mex);
 }
 
-/* Card Telefono - Stile per i giorni e l'orario di apertura */
-.contact-card--phone .hours p {
+/* Card Telefono - orari */
+.contact-page .contact-card--phone .hours {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+}
+
+.contact-page .contact-card--phone .hours p {
   display: flex;
   justify-content: space-between;
-  margin: 8px 0;
+  margin: 12px 0;
   font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
 }
 
-/* Card Telefono - Stile per i giorni di apertura */
-.contact-card--phone .hours span {
-  color: #FFDF00;
+.contact-page .contact-card--phone .hours p:last-child {
+  border-bottom: none;
+}
+
+.contact-page .contact-card--phone .hours span {
+  color: var(--rosso-mex);
   font-weight: 600;
+  background: rgba(0,0,0,0.3);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
 }
 
-.card-footer {
-  margin-top: 15px;
-  color: var(--bianco);
-  font-weight: 600;
-  font-size: 16px;
-  background: linear-gradient(90deg, var(--verde-mex), var(--rosso-mex));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Numero di telefono in evidenza */
+.contact-page .phone-number a {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+  position: relative;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .page-hero__inner {
-    padding: 150px 20px 60px;
-  }
-  
-  .hero-stacked {
-    font-size: clamp(48px, 7vw, 70px);
-  }
-  
-  .accent::before,
-  .accent::after {
-    font-size: 20px;
-  }
+.contact-page .phone-number a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--rosso-mex);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
-@media (max-width: 600px) {
-  .contact-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .contact-card {
-    padding: 30px 20px;
-  }
-  
-  .page-hero__inner {
-    padding: 140px 20px 50px;
-  }
-  
-  .page-hero__inner::before,
-  .page-hero__inner::after {
-    font-size: 40px;
-  }
-  
-  .hero-kicker {
-    font-size: 11px;
-    letter-spacing: 4px;
-  }
-  
-  .hero-stacked {
-    font-size: 48px;
-    letter-spacing: 4px;
-  }
-  
-  .hero-sub {
-    font-size: 15px;
-    padding: 12px 20px;
-  }
-  
-  .split-title {
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-  
-  .card-icon {
-    font-size: 40px;
-  }
-  
-  .phone-number a {
-    font-size: 18px;
-  }
+.contact-page .phone-number a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Card footer */
+.contact-page .card-footer {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
 }
 
 /* Animazioni */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-.contact-card {
-  animation: fadeIn 0.6s ease forwards;
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-page .contact-card:nth-child(1) {
+  animation: slideInLeft 0.8s ease forwards;
   opacity: 0;
 }
 
-.contact-card:nth-child(1) { animation-delay: 0.2s; }
-.contact-card:nth-child(2) { animation-delay: 0.4s; }
-.contact-card:nth-child(3) { animation-delay: 0.6s; }
+.contact-page .contact-card:nth-child(2) {
+  animation: slideInRight 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.contact-page .contact-card:nth-child(3) {
+  animation: slideInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+/* Media Queries - Messico Contemporaneo */
+
+/* Tablet landscape / Small desktop */
+@media screen and (max-width: 996px) {
+  .contact-page .section-inner {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .contact-page .contact-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .contact-page .contact-card:nth-child(1) {
+    grid-row: span 1;
+    grid-column: 1 / -1;
+    padding: 50px 40px;
+  }
+
+  .contact-page .contact-card:nth-child(2),
+  .contact-page .contact-card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .contact-page .split-title {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .contact-page .phone-number a {
+    font-size: 24px;
+  }
+}
+
+/* Tablet portrait */
+@media screen and (max-width: 768px) {
+  .contact-page .page-hero__inner {
+    padding: 30px 20px;
+    min-height: 40vh;
+  }
+
+  .contact-page .hero-stacked {
+    font-size: clamp(42px, 8vw, 60px);
+  }
+
+  .contact-page .hero-sub {
+    padding: 25px;
+    font-size: 16px;
+    margin: 20px 20px 0;
+  }
+
+  .contact-page .section {
+    padding: 60px 20px;
+  }
+
+  .contact-page .section-inner {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contact-page .contact-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-page .split-eyebrow {
+    letter-spacing: 4px;
+    font-size: 14px;
+  }
+
+  .contact-page .split-title {
+    font-size: 28px;
+    white-space: normal;
+  }
+
+  .contact-page .split-title::after {
+    width: 70px;
+    height: 70px;
+    right: -30px;
+  }
+
+  .contact-page .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-page .contact-card:nth-child(1),
+  .contact-page .contact-card:nth-child(2),
+  .contact-page .contact-card:nth-child(3) {
+    grid-column: 1 / -1;
+    padding: 40px 30px;
+  }
+
+  .contact-page .contact-card:nth-child(1) {
+    border-right: none;
+    border-bottom: 8px solid var(--sabbia);
+  }
+
+  .contact-page .contact-card:nth-child(2) {
+    border-right: none;
+    border-left: 10px solid var(--rosso-mex);
+  }
+
+  .contact-page .contact-card:nth-child(3) {
+    border-left: none;
+    border-right: 10px solid var(--verde-mex);
+  }
+
+  .contact-page .contact-card p {
+    font-size: 15px;
+  }
+
+  .contact-page .contact-card:nth-child(1) p {
+    font-size: 16px;
+  }
+
+  .contact-page .phone-number a {
+    font-size: 22px;
+    word-break: break-all;
+  }
+
+  .contact-page .contact-card--phone .hours {
+    padding: 15px;
+  }
+
+  .contact-page .contact-card--phone .hours p {
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+  }
+
+  .contact-page .contact-card--phone .hours span {
+    align-self: flex-start;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .contact-page .page-hero__inner {
+    padding: 20px 15px;
+    min-height: 30vh;
+  }
+
+  .contact-page .hero-kicker {
+    font-size: 11px;
+    padding-left: 35px;
+    letter-spacing: 3px;
+  }
+
+  .contact-page .hero-kicker::before {
+    width: 20px;
+  }
+
+  .contact-page .hero-stacked {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  .contact-page .hero-sub {
+    padding: 20px;
+    font-size: 15px;
+    margin: 15px 10px 0;
+    border-left-width: 4px;
+  }
+
+  .contact-page .hero-sub::before {
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    right: 10px;
+    border-width: 2px;
+  }
+
+  .contact-page .section {
+    padding: 40px 15px;
+  }
+
+  .contact-page .section-inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contact-page .contact-header {
+    margin-bottom: 30px;
+    gap: 3px;
+  }
+
+  .contact-page .split-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    white-space: normal;
+  }
+
+  .contact-page .split-title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .contact-page .split-title::after {
+    width: 50px;
+    height: 50px;
+    right: -15px;
+    bottom: -10px;
+  }
+
+  .contact-page .contact-card:nth-child(1),
+  .contact-page .contact-card:nth-child(2),
+  .contact-page .contact-card:nth-child(3) {
+    padding: 30px 20px;
+  }
+
+  .contact-page .contact-card h3 {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+
+  .contact-page .contact-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .contact-page .contact-card:nth-child(1) p {
+    font-size: 15px;
+  }
+
+  .contact-page .phone-number a {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .contact-page .contact-card--phone .hours {
+    margin-top: 20px;
+    padding: 12px;
+  }
+
+  .contact-page .contact-card--phone .hours p {
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .contact-page .contact-card--phone .hours span {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .contact-page .card-footer {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* Disattiviamo alcune animazioni su mobile per performance */
+  .contact-page .contact-card:nth-child(1):hover,
+  .contact-page .contact-card:nth-child(2):hover,
+  .contact-page .contact-card:nth-child(3):hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

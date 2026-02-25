@@ -1,64 +1,63 @@
 /* Stili per la pagina della politica sulla privacy - Tema Messico */
-/* Palette: Verde #006341, Bianco #FFFFFF, Rosso #CE1126 */
 
 /* Pagina */
-.page{
-  padding-top: var(--header-h); /* Spazio per l'header fisso */
-  background:#000;
+.page {
+  padding-top: var(--header-h);
+  background: #000;
   min-height: 100vh;
 }
 
 /* Hero */
-.policy-hero{
-  position:relative;
+.policy-hero {
+  position: relative;
   min-height: 20vh;
-  display:grid;
-  align-items:end; /* Allinea il contenuto in basso */
-  overflow:hidden;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
-/* Effetto di sfondo con gradienti - Colori Messico */
-.policy-hero::before{
-  content:"";
-  position:absolute; inset:0; /* Copre tutta l'area del hero */
+/* Effetto di sfondo */
+.policy-hero::before {
+  content: "";
+  position: absolute; 
+  inset: 0;
   background:
     radial-gradient(800px 400px at 30% 50%, rgba(0, 99, 65, 0.12), transparent 20%),
     radial-gradient(700px 350px at 80% 20%, rgba(206, 17, 38, 0.18), transparent 20%),
     linear-gradient(0deg, rgba(0, 99, 65, 0.53), rgba(206, 17, 38, 0.43)); 
 }
 
-/* Contenuto dell' hero */
-.policy-hero-inner{
-  position:relative;
+/* Contenuto hero */
+.policy-hero-inner {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   width: 90vw;
   padding: 44px 0 38px;
 }
 
-/* Stile per l'eyebrow del hero, cioè il testo sopra il titolo */
-.policy-eyebrow{
-  letter-spacing:.22em;
-  font-size:.85rem;
-  color: var(--muted); /* --muted è una variabile CSS definita altrove, probabilmente un colore grigio chiaro */
+.policy-eyebrow {
+  letter-spacing: .22em;
+  font-size: .85rem;
+  color: var(--muted);
   margin: 0 0 10px;
 }
 
-/* Stile per il titolo */
-.policy-title{
+.policy-title {
   margin: 0;
   font-size: clamp(34px, 4.6vw, 64px);
-  letter-spacing:.04em;
-  line-height:1.02;
+  letter-spacing: .04em;
+  line-height: 1.02;
   font-weight: 800;
 }
 
-/* Stile per il titolo (seconda parte) */
-.policy-title em{ color: white; font-style: normal; }
+.policy-title em { 
+  color: white; 
+  font-style: normal; 
+}
 
-/* Stile per il sottotitolo */
-.policy-sub{
+.policy-sub {
   margin: 14px 0 0;
   max-width: 70ch;
   color: var(--muted);
@@ -66,60 +65,64 @@
   font-size: 1.05rem;
 }
 
-/* Stile per le card della politica sulla privacy */
-.policy-wrap{
+/* Card */
+.policy-wrap {
   max-width: 1200px;
   margin: 0 auto;
   width: 90vw;
   padding: 56px 0 90px;
-  display:grid;
-  grid-template-columns: 1fr; /* Una colonna per dispositivi mobili, si adatterà a più colonne su schermi più grandi */
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 26px;
 }
 
-/* Stile per ogni card della politica sulla privacy */
-.policy-card{
+.policy-card {
   background: #0b0b0b;
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 0px;
   padding: 26px 26px 18px;
 }
 
-/* Stile per i titoli all'interno delle card sulla privacy */
-.policy-card h2{
+.policy-card h2 {
   margin: 0 0 10px;
   font-size: clamp(20px, 2.1vw, 30px);
-  letter-spacing:.08em;
+  letter-spacing: .08em;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-/* Stile per i titoli all'interno delle card sulla privacy */
-.policy-card h3{
+.policy-card h3 {
   margin: 18px 0 8px;
   font-size: 1.05rem;
-  letter-spacing:.08em;
+  letter-spacing: .08em;
   color: var(--muted);
   text-transform: uppercase;
   font-weight: 800;
 }
 
-/* Stile per i paragrafi all'interno delle card sulla privacy */
-.policy-card p{
+.policy-card p {
   margin: 0 0 12px;
   color: var(--muted);
   line-height: 1.7;
   font-size: 1.02rem;
 }
 
-.policy-card strong{ color:#fff; }
+.policy-card strong { 
+  color: #fff; 
+}
 
-.policy-card a{ color:#fff; text-decoration:none; border-bottom: 1px solid rgba(255,255,255,.25); }
+.policy-card a { 
+  color: #fff; 
+  text-decoration: none; 
+  border-bottom: 1px solid rgba(255,255,255,.25); 
+}
 
-.policy-card a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
+.policy-card a:hover { 
+  color: var(--accent); 
+  border-bottom-color: var(--accent); 
+}
 
-/* Stile per le liste all'interno delle card sulla privacy */
-.policy-list{
+.policy-list {
   margin: 8px 0 12px;
   padding-left: 18px;
   color: var(--muted);
@@ -127,27 +130,15 @@
   font-size: 1.02rem;
 }
 
-/* Stile per gli elementi delle liste all'interno delle card sulla privacy */
-.policy-list li{ margin: 8px 0; }
+.policy-list li { 
+  margin: 8px 0; 
+}
 
-/* Stile per le note all'interno delle card sulla privacy */
-.policy-note{
+.policy-note {
   margin-top: 14px;
   padding: 14px 14px;
   border-left: 3px solid var(--accent);
   background: rgba(206, 17, 38, 0.06);
   color: var(--muted);
   line-height: 1.6;
-}
-
-/* ---- RESPOSIVE ---- */
-@media (max-width:960px){
-  .site-header{ height:var(--header-h) }
-  .menu-panel{ width:100vw }
-}
-
-@media (max-width:600px){
-  .logo img{ height:64px; }
-  .policy-card{ padding: 20px 18px 14px; }
-  .policy-card p, .policy-list{ font-size: .95rem; }
 }

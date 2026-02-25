@@ -56,15 +56,6 @@
   padding-left: 5px;
 }
 
-.legal-text::before {
-  position: absolute;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  opacity: 0.7;
-}
-
 .legal-text p {
   color: #cfcfcf;
   font-size: 14px;
@@ -110,51 +101,6 @@
   text-shadow: 0 0 8px var(--rosso-mex);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 30px 16px;
-    margin-top: 40px;
-  }
-  
-  .legal {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  
-  .legal-text {
-    padding-left: 0;
-  }
-
-  .legal-text p {
-    font-size: 12px;
-  }
-  
-  .legal-text::before {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .legal-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .legal-links li:not(:last-child)::after {
-    display: none;
-  }
-  
-  .legal-links a {
-    font-size: 13px;
-  }
-}
-
 /* Animazione per il footer */
 @keyframes borderPulse {
   0%, 100% {
@@ -167,4 +113,227 @@
 
 .site-footer {
   animation: borderPulse 3s infinite;
+}
+
+/* Media Queries - Footer Tema Messico */
+
+/* Tablet landscape / Small desktop */
+@media screen and (max-width: 996px) {
+  .site-footer {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }
+
+  .legal-links {
+    gap: 30px;
+  }
+
+  .legal-links li:not(:last-child)::after {
+    right: -17px;
+    font-size: 16px;
+  }
+
+  .legal-text p {
+    font-size: 13px;
+  }
+
+  .legal-links a {
+    font-size: 13px;
+  }
+
+  .site-footer::before {
+    background-image: 
+      repeating-linear-gradient(45deg, 
+        rgba(0, 99, 65, 0.05) 0px, 
+        rgba(0, 99, 65, 0.05) 18px,
+        rgba(255, 255, 255, 0.02) 18px,
+        rgba(255, 255, 255, 0.02) 36px,
+        rgba(206, 17, 38, 0.05) 36px,
+        rgba(206, 17, 38, 0.05) 54px);
+  }
+}
+
+/* Tablet portrait */
+@media screen and (max-width: 768px) {
+  .site-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 30px;
+  }
+
+  .legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .legal-text {
+    width: 100%;
+  }
+
+  .legal-text p {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+
+  .legal-links {
+    width: 100%;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .legal-links li:not(:last-child)::after {
+    right: -15px;
+    font-size: 15px;
+  }
+
+  .legal-links a {
+    font-size: 13px;
+    padding: 8px 0; /* Aumentato per migliorare il touch target */
+  }
+
+  .site-footer {
+    animation: borderPulse 4s infinite; /* Ridotta velocità animazione */
+  }
+
+  .site-footer::before {
+    background-image: 
+      repeating-linear-gradient(45deg, 
+        rgba(0, 99, 65, 0.04) 0px, 
+        rgba(0, 99, 65, 0.04) 15px,
+        rgba(255, 255, 255, 0.01) 15px,
+        rgba(255, 255, 255, 0.01) 30px,
+        rgba(206, 17, 38, 0.04) 30px,
+        rgba(206, 17, 38, 0.04) 45px);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .site-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin-top: 25px;
+    border-top-width: 2px;
+  }
+
+  .legal {
+    gap: 20px;
+  }
+
+  .legal-text p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+
+  .legal-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .legal-links li {
+    width: 100%;
+  }
+
+  .legal-links li:not(:last-child)::after {
+    display: none; /* Rimuoviamo i separatori su mobile */
+  }
+
+  .legal-links a {
+    font-size: 13px;
+    display: inline-block;
+    padding: 8px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .legal-links a:hover {
+    border-bottom-color: var(--rosso-mex);
+    padding-left: 5px; /* Piccolo effetto di slide su hover */
+  }
+
+  .site-footer {
+    animation: none; /* Rimuoviamo l'animazione su mobile per performance */
+    border-color: var(--verde-mex); /* Manteniamo colore fisso */
+  }
+
+  .site-footer::before {
+    background-image: none; /* Rimuoviamo il pattern per performance */
+    background: linear-gradient(90deg, 
+      rgba(0, 99, 65, 0.03) 0%, 
+      rgba(206, 17, 38, 0.03) 100%);
+  }
+
+  /* Aggiungiamo un piccolo accento decorativo */
+  .legal-text {
+    border-left: 2px solid var(--rosso-mex);
+    padding-left: 10px;
+  }
+}
+
+/* Mobile molto piccolo */
+@media screen and (max-width: 360px) {
+  .site-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .legal-text p {
+    font-size: 11px;
+  }
+
+  .legal-links a {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .legal-text {
+    padding-left: 8px;
+  }
+}
+
+/* Dark mode support (se il browser supporta preferenze colore) */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .site-footer {
+    background: #000;
+  }
+  
+  .legal-text p,
+  .legal-links a {
+    color: #e0e0e0;
+  }
+}
+
+/* Landscape orientation su mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .site-footer {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .legal-links {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .legal-links li:not(:last-child)::after {
+    display: inline-block; /* Reintroduciamo i separatori in landscape */
+  }
 }

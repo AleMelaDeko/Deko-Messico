@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: var(--header-h);
   background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -92,42 +92,150 @@
   width: 100%;
 }
 
-body {
-  padding-top: 100px;
-}
+/* Media Queries - Header Tema Messico */
 
-/* Responsive */
-@media (max-width: 768px) {
-  .site-header {
-    height: 80px;
+/* Tablet landscape / Small desktop */
+@media screen and (max-width: 996px) {
+  .header-container {
+    padding-left: 60px;
+    padding-right: 60px;
   }
-  
+
+  .main-nav .nav-list {
+    gap: 30px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
   .logo::before {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     left: -15px;
   }
-  
-  .logo img {
-    height: 50px;
+
+  .nav-link {
+    font-size: 15px;
   }
-  
+}
+
+/* Tablet portrait */
+@media screen and (max-width: 768px) {
+  .site-header {
+    height: calc(var(--header-h) - 10px); /* Riduciamo leggermente l'altezza */
+  }
+
+  .header-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .main-nav .nav-list {
     gap: 20px;
   }
-  
-  body {
-    padding-top: 80px;
+
+  .logo img {
+    height: 50px;
+  }
+
+  .logo::before {
+    width: 30px;
+    height: 30px;
+    left: -12px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .site-header {
+    background-image: 
+      repeating-linear-gradient(45deg, 
+        rgba(0, 99, 65, 0.05) 0px, 
+        rgba(0, 99, 65, 0.05) 15px,
+        rgba(255, 255, 255, 0.02) 15px,
+        rgba(255, 255, 255, 0.02) 30px,
+        rgba(206, 17, 38, 0.05) 30px,
+        rgba(206, 17, 38, 0.05) 45px);
   }
 }
 
-@media (max-width: 480px) {
-  .header-container {
-    padding: 0 15px;
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .site-header {
+    height: calc(var(--header-h) - 15px);
+    background-image: none; /* Rimuoviamo il pattern per performance */
   }
-  
+
+  .header-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logo::before {
+    width: 25px;
+    height: 25px;
+    left: -8px;
+  }
+
+  .main-nav .nav-list {
+    gap: 15px;
+  }
+
   .nav-link {
-    font-size: 14px;
-    padding: 5px 5px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+
+  .nav-link::before {
+    bottom: -1px;
+    height: 1.5px;
+  }
+
+  .nav-link:hover {
+    text-shadow: 0 0 5px var(--rosso-mex);
+  }
+
+  .site-header {
+    backdrop-filter: blur(8px); /* Riduciamo il blur per performance */
+  }
+
+  /* Opzionale: se lo spazio è troppo ridotto, puoi nascondere il pattern */
+  .site-header {
+    background-image: linear-gradient(90deg, 
+      rgba(0, 99, 65, 0.05) 0%, 
+      rgba(206, 17, 38, 0.05) 100%);
+  }
+}
+
+/* Mobile molto piccolo */
+@media screen and (max-width: 360px) {
+  .header-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .main-nav .nav-list {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .logo::before {
+    width: 20px;
+    height: 20px;
+    left: -5px;
   }
 }
